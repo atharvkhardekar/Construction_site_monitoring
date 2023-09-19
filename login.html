@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <h1 class="login">User Login</h1>
+    <form id="registration-form" action="javascript:void(0);" onsubmit="openDashboard()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <button type="submit">Login</button>
+         <div id="dashboard" style="display: none;">
+        <h2>Welcome, User!</h2>
+        <p>This is your dashboard. Here's some additional content:</p>
+        
+    </div>
+    </form>
+
+    <div id="dashboard" style="display: none;">
+        
+    </div>
+
+    <script>
+        function openDashboard() {
+            
+            window.location.href = 'http://127.0.0.1:5501/index.html';
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            document.getElementById('registration-form').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+
+        }
+
+    </script>
+</body>
+</html>
