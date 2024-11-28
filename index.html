@@ -9,46 +9,136 @@
 <body>
     <header>
         <h1>Construction Site Dashboard</h1>
+        <div class="header-buttons">
+            <button id="loginButton" onclick="navigateToLogin()">Login</button>
+            <button id="logoutButton" onclick="logout()" style="display: none;">Logout</button>
+            <button onclick="navigateToHome()">Home Page</button>
+        </div>
     </header>
     
     <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="#" class="nav-link">Home</a></li>
-            <li><a href="#" class="nav-link">Safety</a></li>
-            <li><a href="#" class="nav-link">Efficiency</a></li>
-            <li><a href="#" class="nav-link">Machines</a></li>
-            <li><a href="#" class="nav-link">Reports</a></li>
+            <li><a href="#safety" class="nav-link">Safety</a></li>
+            <li><a href="#efficiency" class="nav-link">Efficiency</a></li>
+            <li><a href="#machines" class="nav-link">Machines</a></li>
+            <li><a href="#reports" class="nav-link">Reports</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
-    <div class="container" id="content">
-        <h2>Safety Overview</h2>
-        <div class="chart" id="safety-chart">
+    <div class="container">
+        <!-- Safety Section -->
+        <section id="safety">
+            <h2>Safety Overview</h2>
+            <div class="chart">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Worker Name</th>
+                            <th>Zone</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Danger Zone</td>
+                            <td>At Risk</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>Safe Zone</td>
+                            <td>Safe</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        </div>
+        <!-- Efficiency Section -->
+        <section id="efficiency">
+            <h2>Worker Efficiency</h2>
+            <div class="chart">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Worker Name</th>
+                            <th>Heart Rate (bpm)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Michael Lee</td>
+                            <td>78</td>
+                            <td>Healthy</td>
+                        </tr>
+                        <tr>
+                            <td>Sara Connor</td>
+                            <td>95</td>
+                            <td>High Heart Rate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <h2>Worker Efficiency</h2>
-        <div class="chart" id="efficiency-chart">
-        </div>
+        <!-- Machine Section -->
+        <section id="machines">
+            <h2>Machine Status</h2>
+            <div class="chart">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Machine ID</th>
+                            <th>Status</th>
+                            <th>Last Maintenance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Excavator-101</td>
+                            <td>Operational</td>
+                            <td>2024-11-20</td>
+                        </tr>
+                        <tr>
+                            <td>Cranes-202</td>
+                            <td>Requires Maintenance</td>
+                            <td>2024-10-15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <h2>Machine Status</h2>
-        <div class="chart" id="machine-chart">
-        </div>
-        
-    <a href="#" id="logout" onclick="exit()">Logout</a>
+        <!-- Reports Section -->
+        <section id="reports">
+            <h2>Reports</h2>
+            <p>Generate and download site activity reports, worker safety records, and machine logs for analysis.</p>
+            <button onclick="generateReport()">Download Report</button>
+        </section>
+
+        <a href="#" id="logout" onclick="exit()">Logout</a>
     </div>
 
     <!-- JavaScript -->
     <script>
-        function exit() {
-            window.location.href = 'http://127.0.0.1:5501/login.html';
+        function navigateToLogin() {
+            window.location.href = 'login.html';
         }
-    </script> 
+
+        function navigateToHome() {
+            window.location.href = 'index.html';
+        }
+
+        function exit() {
+            window.location.href = 'http://127.0.0.1:5500/login.html';
+        }
+
+        function generateReport() {
+            alert('Report generation feature will be implemented in the future.');
+        }
+    </script>
 </body>
 </html>
-
-
-
-    
